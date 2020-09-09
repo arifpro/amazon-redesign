@@ -1,7 +1,21 @@
 import React from 'react';
 import './Product.css';
 
-const Product = ({ title, image, price, rating }) => {
+// context api
+import { useStateValue } from '../../state/StateProvider';
+
+const Product = ({ id, title, image, price, rating }) => {
+    const [{ cart }, dispatch] = useStateValue();
+    // cart from state
+
+    const addToCart = () => {
+        // dispatch the item into the data layer
+        dispatch({
+            type: 'ADD_TO_CART',
+            item: {id, title, image, price, rating}
+        })
+    };
+
     return (
         <section className="product">
             <div className="product__info">
@@ -14,7 +28,7 @@ const Product = ({ title, image, price, rating }) => {
                 <div className="product__rating">
                     {
                         Array(rating).fill().map((_, i) => (
-                            <span role="img" aria-label="Rating">⭐</span>
+                            <span key={id + i} role="img" aria-label="Rating">⭐</span>
                         ))
                     }
                 </div>
@@ -22,7 +36,7 @@ const Product = ({ title, image, price, rating }) => {
 
             <img src={image} alt="productImg"/>
 
-            <button>Add to Cart</button>
+            <button onClick={addToCart}>Add to Cart</button>
         </section>
     )
 }

@@ -6,7 +6,11 @@ import logo from '../../img/logo.png';
 import { Search, ShoppingCart } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
+// context api
+import { useStateValue } from '../../state/StateProvider'
+
 const Header = () => {
+    const [{ cart }, dispatch] = useStateValue();
     return (
         <section className='header'>
             {/* logo */}
@@ -42,7 +46,7 @@ const Header = () => {
                 <Link to="/checkout">
                     <div className="header__optionCart">
                         <ShoppingCart className="" />
-                        <span className="header__cartCount">0</span>
+                        <span className="header__cartCount">{cart?.length}</span>
                     </div>
                 </Link>
             </div>

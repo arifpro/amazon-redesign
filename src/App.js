@@ -16,6 +16,7 @@ function App() {
             <Route exact path='/'>
                 <Header />
                 <Home />
+                {/* footer */}
             </Route>
 
             <Route path='/checkout'>
