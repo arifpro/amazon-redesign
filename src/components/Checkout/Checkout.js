@@ -3,6 +3,7 @@ import './Checkout.css';
 
 // images and icons
 import checkoutAd from '../../img/ad/checkoutAd.jpg';
+import Subtotal from '../Subtotal/Subtotal';
 
 const Checkout = () => {
     return (
@@ -19,7 +20,7 @@ const Checkout = () => {
             </div>
 
             <div className="checkout__right">
-                <
+                <Subtotal />
                 <h2>The subtotal will go here</h2>
             </div>
         </section>
