@@ -1,15 +1,18 @@
 import React from 'react';
-import './Header.css'
+import './Header.css';
 
 // images and icons
-import logo from '../../img/logo.png'
+import logo from '../../img/logo.png';
 import { Search, ShoppingCart } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <section className='header'>
             {/* logo */}
-            <img src={logo} alt="logo" className='header__logo'/>
+            <Link to="/">
+                <img src={logo} alt="logo" className='header__logo'/>
+            </Link>
 
             {/* search box */}
             <div className="header__search">
@@ -36,10 +39,12 @@ const Header = () => {
                 </div>
 
                 {/* icons */}
-                <div className="header__optionCart">
-                    <ShoppingCart className="" />
-                    <span className="header__cartCount">0</span>
-                </div>
+                <Link to="/checkout">
+                    <div className="header__optionCart">
+                        <ShoppingCart className="" />
+                        <span className="header__cartCount">0</span>
+                    </div>
+                </Link>
             </div>
         </section>
     )
