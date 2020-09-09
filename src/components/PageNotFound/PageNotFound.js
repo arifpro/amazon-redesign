@@ -1,9 +1,9 @@
 import React from 'react';
-import './PageNotFound.css'
+import './PageNotFound.css';
 
 const PageNotFound = () => {
     return (
-        <div>
+        <section>
             <div id="notfound">
                 <div class="notfound">
                     <div class="notfound-404">
@@ -15,7 +15,7 @@ const PageNotFound = () => {
                     <a href="/">home page</a>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
