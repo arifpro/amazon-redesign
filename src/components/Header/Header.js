@@ -1,10 +1,13 @@
 import React from 'react';
 import './Header.css'
+
+// images and icons
 import logo from '../../img/logo.png'
+import { Search, ShoppingCart } from '@material-ui/icons';
 
 const Header = () => {
     return (
-        <div className='header'>
+        <section className='header'>
             {/* logo */}
             <img src={logo} alt="logo" className='header__logo'/>
 
@@ -12,9 +15,10 @@ const Header = () => {
             <div className="header__search">
                 <input type="text" className="header__searchInput"/>
                 {/* search icon */}
+                <Search className="header_searchIcon" />
             </div>
 
-            {/* nav items and icons */}
+            {/* nav items */}
             <div className="header__nav">
                 <div className="header__navItem">
                     <span className="header__navItemLineOne">Hello Guest</span>
@@ -30,8 +34,14 @@ const Header = () => {
                     <span className="header__navItemLineOne">Your</span>
                     <span className="header__navItemLineTwo">Prime</span>
                 </div>
+
+                {/* icons */}
+                <div className="header__optionCart">
+                    <ShoppingCart className="" />
+                    <span className="header__cartCount">0</span>
+                </div>
             </div>
-        </div>
+        </section>
     )
 }
 
