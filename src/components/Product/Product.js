@@ -1,27 +1,26 @@
 import React from 'react';
 import './Product.css';
 
-// images and icons
-import theLeanStartup from '../../img/products/theLeanStartup.jpg'
-
-const Product = () => {
+const Product = ({ title, image, price, rating }) => {
     return (
         <section className="product">
             <div className="product__info">
-                <p>The Lean Startup</p>
+                <p>{title}</p>
                 <p className="product__price">
                     <small>$</small>
-                    <strong>19.99</strong>
+                    <strong>{price}</strong>
                 </p>
 
                 <div className="product__rating">
-                    <p>⭐</p>
-                    <p>⭐</p>
-                    <p>⭐</p>
+                    {
+                        Array(rating).fill().map((_, i) => (
+                            <span role="img" aria-label="Rating">⭐</span>
+                        ))
+                    }
                 </div>
             </div>
 
-            <img src={theLeanStartup} alt="theLeanStartup"/>
+            <img src={image} alt="productImg"/>
 
             <button>Add to Cart</button>
         </section>
