@@ -1,0 +1,17 @@
+.footer__backButton {
+    width: 100%;
+    padding: 12px 0px;
+    color: whitesmoke;
+    background-color: #37475a;
+    border: none;
+}
+
+.footer__copyright {
+    background-color: #131a22;
+}
+
+.footer__copyright{
+    align-items: center;
+    margin: 0 auto;
+    color: whitesmoke;
+}

@@ -19,8 +19,8 @@ const Checkout = () => {
                 <img src={checkoutAd} alt="checkoutAd" className="checkout_ad"/>
 
                 <div>
-                    <h3>Hello, {user?.email}</h3>
-                    <h2 className="checkout__title">Your shopping Cart</h2>
+                    <h3>Hello, {user? user.email : 'Guest'}</h3>
+                    <h2 className="checkout__title">Your Shopping Cart {cart && cart.length !== 0 ? '' : 'Is Empty'}</h2>
 
                     {/* cart item */}
                     {

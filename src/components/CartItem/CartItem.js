@@ -16,10 +16,10 @@ const CartItem = ({ item }) => {
     };
     return (
         <section className="cartItem">
-            <img src={item.image} alt={item.price} />
+            <img src={item.image} alt={item.price} className='cartItem__image' />
             
             <div className="cartItem__info">
-                <p>{item.title}</p>
+                <p className='cartItem__title'>{item.title}</p>
                 <p className="cartItem__price">
                     <small>$</small>
                     <strong>{item.price}</strong>
@@ -28,7 +28,7 @@ const CartItem = ({ item }) => {
                 <div className="cartItem__rating">
                     {
                         Array(item.rating).fill().map((_, i) => (
-                            <span key={item.id + i} role="img" aria-label="Rating">⭐</span>
+                            <span key={item.id + i} role="img" aria-label="Rating">🌟</span>
                         ))
                     }
                 </div>

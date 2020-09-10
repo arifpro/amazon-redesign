@@ -20,7 +20,7 @@ const Header = () => {
     };
 
     return (
-        <section className='header'>
+        <section className='header' id="header">
             {/* logo */}
             <Link to="/">
                 <img src={logo} alt="logo" className='header__logo'/>
