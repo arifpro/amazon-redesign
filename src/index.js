@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// carousel
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 // context api
 import { StateProvider } from './state/StateProvider';
 import reducer, { initialState } from './state/reducer';

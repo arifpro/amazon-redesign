@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import Product from '../Product/Product';
 import DiscoverItem from '../DiscoverItem/DiscoverItem';
 import Books from '../Books/Books';
 import { Link } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
+
 
 // image
-import homeImg from '../../img/homeImg.jpg';
+import homeImg1 from '../../img/homeImg.jpg';
+import homeImg2 from '../../img/homeImg2.jpg';
+import homeImg3 from '../../img/homeImg3.jpg';
+
+// data
 import productData from '../../data/productData';
 
 
@@ -14,7 +20,28 @@ const Home = () => {
     return (
         <section className="home">
             <div className="home__container">
-                <img src={homeImg} alt="homeImg" className="home__image" />
+                {/* <img src={homeImg} alt="homeImg" className="home__image" /> */}
+
+                <Carousel className="home__imageSlide">
+                    <img src={homeImg1} alt="homeImg1" />
+                    <img src={homeImg2} alt="homeImg2" />
+                    <img src={homeImg3} alt="homeImg3" />
+                </Carousel>
+
+                {/* <Carousel>
+                    <div>
+                        <img src="http://react-responsive-carousel.js.org/assets/1.jpeg" alt="homeImg" className="home__image" />
+                        <p className="legend">Legend 1</p>
+                    </div>
+                    <div>
+                        <img src="http://react-responsive-carousel.js.org/assets/2.jpeg" alt="homeImg" className="home__image" />
+                        <p className="legend">Legend 2</p>
+                    </div>
+                    <div>
+                        <img src="http://react-responsive-carousel.js.org/assets/3.jpeg" alt="homeImg" className="home__image" />
+                        <p className="legend">Legend 3</p>
+                    </div>
+                </Carousel> */}
 
                 <div className="home__row">
                     <Product 
