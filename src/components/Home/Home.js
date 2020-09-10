@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import Product from '../Product/Product';
 import DiscoverItem from '../DiscoverItem/DiscoverItem';
+import Books from '../Books/Books';
 
 // images and icons
 import homeImg from '../../img/homeImg.jpg';
@@ -19,7 +20,14 @@ import fees from '../../img/discover/fees.jpg';
 import track from '../../img/discover/track.jpg';
 import service from '../../img/discover/service.jpg';
 // images for books
+import algo from '../../img/books/algo.jpg';
+import htmlCss from '../../img/books/htmlCss.jpg';
 import js from '../../img/books/js.jpg';
+import reactjs from '../../img/books/reactjs.jpg';
+import reactNative from '../../img/books/reactNative.jpg';
+import nodejs from '../../img/books/nodejs.jpg';
+import expressjs from '../../img/books/expressjs.jpg';
+
 
 const Home = () => {
     const dataRow1 = [
@@ -69,7 +77,59 @@ const Home = () => {
             price: 1094.98,
             rating: 4
         }
-    ]
+    ];
+    const books = [
+        {
+            id: "4000001",
+            title: "Algorithms",
+            image: algo,
+            price: 99.99,
+            rating: 5
+        },
+        {
+            id: "4000001",
+            title: "HTML & CSS",
+            image: htmlCss,
+            price: 89.99,
+            rating: 5
+        },
+        {
+            id: "4000001",
+            title: "JavaScript",
+            image: js,
+            price: 120.98,
+            rating: 5
+        },
+        {
+            id: "4000001",
+            title: "React Js",
+            image: reactjs,
+            price: 105.99,
+            rating: 4
+        },
+        {
+            id: "4000001",
+            title: "React Native",
+            image: reactNative,
+            price: 110.99,
+            rating: 5
+        },
+        {
+            id: "4000001",
+            title: "Node Js",
+            image: nodejs,
+            price: 150.99,
+            rating: 4
+        }
+        ,
+        {
+            id: "4000001",
+            title: "Express Js",
+            image: expressjs,
+            price: 79.99,
+            rating: 5
+        }
+    ];
     return (
         <section className="home">
             <div className="home__container">
@@ -138,7 +198,19 @@ const Home = () => {
                     />
                 </div>
 
-                <div className="home__row"></div>
+                <div className="home__row" style={{backgroundColor: 'white'}}>
+                    {
+                        Array(7).fill().map((_, i) => (
+                            <Books 
+                                id={books[i].id}
+                                title={books[i].title}
+                                image={books[i].image}
+                                price={books[i].price}
+                                rating={books[i].rating}
+                            />
+                        ))
+                    }
+                </div>
             </div>
         </section>
     )
