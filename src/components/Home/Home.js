@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import Product from '../Product/Product';
+import DiscoverItem from '../DiscoverItem/DiscoverItem';
 
 // images and icons
 import homeImg from '../../img/homeImg.jpg';
@@ -10,6 +11,15 @@ import band from '../../img/products/band.jpg';
 import echo from '../../img/products/echo.jpg';
 import iPad from '../../img/products/iPad.jpg';
 import monitor from '../../img/products/monitor.jpg';
+// images for discover
+import languages from '../../img/discover/languages.png';
+import currencies from '../../img/discover/currencies.jpg';
+import payment from '../../img/discover/payment.jpg';
+import fees from '../../img/discover/fees.jpg';
+import track from '../../img/discover/track.jpg';
+import service from '../../img/discover/service.jpg';
+// images for books
+import js from '../../img/books/js.jpg';
 
 const Home = () => {
     const dataRow1 = [
@@ -82,6 +92,18 @@ const Home = () => {
                     />
                 </div>
 
+                <div className="home__row home__discover">
+                    <h2>Discover Amazon <small>Click to learn more</small></h2>
+                    <div className="home__discoverDiv">
+                        <DiscoverItem image={languages} />
+                        <DiscoverItem image={currencies}/>
+                        <DiscoverItem image={payment}/>
+                        <DiscoverItem image={fees}/>
+                        <DiscoverItem image={track}/>
+                        <DiscoverItem image={service}/>
+                    </div>
+                </div>
+
                 <div className="home__row">
                     <Product 
                         id={dataRow2[0].id}
@@ -115,6 +137,8 @@ const Home = () => {
                         rating={dataRow3[0].rating}
                     />
                 </div>
+
+                <div className="home__row"></div>
             </div>
         </section>
     )

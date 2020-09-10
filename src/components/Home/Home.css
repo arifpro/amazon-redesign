@@ -19,3 +19,29 @@
     margin-bottom: -150px;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
+
+.home__discover {
+    display: flex;
+    flex-direction: column;
+    margin: auto 15px;
+    background-color: white;
+}
+
+.home__discover h2 {
+    align-items: left;
+    padding-top: 20px;
+    margin-left: 30px;
+}
+
+.home__discover small {
+    color: #2fa3e6;
+}
+
+.home__discoverDiv {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
