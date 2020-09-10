@@ -7,10 +7,18 @@ import { Search, ShoppingCart } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
 // context api
-import { useStateValue } from '../../state/StateProvider'
+import { useStateValue } from '../../state/StateProvider';
+import { auth } from '../../firebase';
 
 const Header = () => {
-    const [{ cart }, dispatch] = useStateValue();
+    const [{ cart, user }, dispatch] = useStateValue();
+    
+    const handleAuthentication = () => {
+        if (user) {
+            auth.signOut();
+        }
+    };
+
     return (
         <section className='header'>
             {/* logo */}
@@ -27,10 +35,12 @@ const Header = () => {
 
             {/* nav items */}
             <div className="header__nav">
-                <div className="header__navItem">
-                    <span className="header__navItemLineOne">Hello Guest</span>
-                    <span className="header__navItemLineTwo">Sign In</span>
-                </div>
+                <Link to={!user && '/login'}>
+                    <div onClick={handleAuthentication} className="header__navItem">
+                        <span className="header__navItemLineOne">Hello {user ? user.email : 'Guest'}</span>
+                        <span className="header__navItemLineTwo">Sign {user ? 'Out' : 'In'}</span>
+                    </div>
+                </Link>
 
                 <div className="header__navItem">
                     <span className="header__navItemLineOne">Returns</span>

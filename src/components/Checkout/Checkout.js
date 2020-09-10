@@ -1,6 +1,7 @@
 import React from 'react';
 import './Checkout.css';
 
+
 // images and icons
 import checkoutAd from '../../img/ad/checkoutAd.jpg';
 import Subtotal from '../Subtotal/Subtotal';
@@ -10,7 +11,7 @@ import CartItem from '../CartItem/CartItem';
 import { useStateValue } from '../../state/StateProvider'
 
 const Checkout = () => {
-    const [{ cart }, dispatch] = useStateValue();
+    const [{ cart, user }, dispatch] = useStateValue();
 
     return (
         <section className="checkout">
@@ -18,11 +19,12 @@ const Checkout = () => {
                 <img src={checkoutAd} alt="checkoutAd" className="checkout_ad"/>
 
                 <div>
+                    <h3>Hello, {user?.email}</h3>
                     <h2 className="checkout__title">Your shopping Cart</h2>
 
                     {/* cart item */}
                     {
-                        cart.map(item => <CartItem key={item.id} item={item} />)
+                        cart.map(item => <CartItem item={item} />)
                     }
                 </div>
             </div>
