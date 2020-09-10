@@ -6,15 +6,13 @@ import { useStateValue } from '../../state/StateProvider';
 
 const CartItem = ({ item }) => {
     const [{ cart }, dispatch] = useStateValue();
-    console.log(item)
 
     const removeFromCart = () => {
-        // dispatch the item into the data layer
-        // dispatch({
-        //     type: 'REMOVE_FROM_CART',
-        //     item: {id, title, image, price, rating}
-        // })
-        console.log(item)
+        // remove the item from cart
+        dispatch({
+            type: 'REMOVE_FROM_CART',
+            id: item.id
+        })
     };
     return (
         <section className="cartItem">
