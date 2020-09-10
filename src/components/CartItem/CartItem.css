@@ -13,7 +13,7 @@
     width: 100%;
     object-fit: contain; /* size by ratio */
     margin-bottom: 15px;
-    z-index: 999;
+    z-index: 99;
 }
 
 .cartItem__info {
