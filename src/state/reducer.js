@@ -1,5 +1,6 @@
 export const initialState = {
-    cart: []
+    cart: [],
+    user: null
 };
 
 // Selector
