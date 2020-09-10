@@ -3,6 +3,7 @@ import './Home.css';
 import Product from '../Product/Product';
 import DiscoverItem from '../DiscoverItem/DiscoverItem';
 import Books from '../Books/Books';
+import { Link } from 'react-router-dom';
 
 // images and icons
 import homeImg from '../../img/homeImg.jpg';
@@ -153,7 +154,9 @@ const Home = () => {
                 </div>
 
                 <div className="home__row home__discover">
-                    <h2>Discover Amazon <small>Click to learn more</small></h2>
+                    <h2 className="home__discoverTitle">
+                        Discover Amazon <Link className="home__discoverLink" to="#">Click to learn more</Link>
+                    </h2>
                     <div className="home__discoverDiv">
                         <DiscoverItem image={languages} />
                         <DiscoverItem image={currencies}/>
@@ -198,18 +201,24 @@ const Home = () => {
                     />
                 </div>
 
-                <div className="home__row" style={{backgroundColor: 'white'}}>
-                    {
-                        Array(7).fill().map((_, i) => (
-                            <Books 
+                <div className="home__row home__book">
+                    <h2 className="home__bookTitle">
+                        Books <Link className="home__bookLink" to="#">Click to see more</Link>
+                    </h2>
+
+                    <div className="home__bookDiv">
+                        {
+                            Array(7).fill().map((_, i) => (
+                                <Books 
                                 id={books[i].id}
                                 title={books[i].title}
                                 image={books[i].image}
                                 price={books[i].price}
                                 rating={books[i].rating}
-                            />
-                        ))
-                    }
+                                />
+                                ))
+                        }
+                    </div>
                 </div>
             </div>
         </section>

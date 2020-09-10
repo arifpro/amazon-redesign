@@ -14,7 +14,7 @@ const Footer = () => {
 
 
             <div className="footer__nav">
-                <div className="footer_navRow">
+                <div className="footer__navRow">
                     <h3>Get to Know Us</h3>
                     <ul>
                         <li>Careers</li>
@@ -62,17 +62,9 @@ const Footer = () => {
                         <li>Help</li>
                     </ul>
                 </div>
-
-                <hr/>
-
-                <div>
-                    <img src={logo} alt="logo"/>
-                </div>
             </div>
 
-            <div className="footer__copyright">
-                <p>© 1996-2020, Amazon.com, Inc. or its affiliates</p>
-            </div>
+            <button className="footer__copyright" disabled>© 1996-2020, Amazon.com, Inc. or its affiliates</button>
         </section>
     )
 }

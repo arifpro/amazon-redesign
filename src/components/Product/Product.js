@@ -28,7 +28,7 @@ const Product = ({ id, title, image, price, rating }) => {
                 <div className="product__rating">
                     {
                         Array(rating).fill().map((_, i) => (
-                            <span key={id + i} role="img" aria-label="Rating">🌟</span>
+                            <span key={id + i} role="img" aria-label="Rating">⭐</span>
                         ))
                     }
                 </div>

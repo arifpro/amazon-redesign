@@ -28,7 +28,7 @@ const CartItem = ({ item }) => {
                 <div className="cartItem__rating">
                     {
                         Array(item.rating).fill().map((_, i) => (
-                            <span key={item.id + i} role="img" aria-label="Rating">🌟</span>
+                            <span key={item.id + i} role="img" aria-label="Rating">⭐</span>
                         ))
                     }
                 </div>

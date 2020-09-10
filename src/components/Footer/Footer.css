@@ -1,17 +1,32 @@
 .footer__backButton {
     width: 100%;
     padding: 12px 0px;
-    color: whitesmoke;
+    color: #c3dada;
     background-color: #37475a;
     border: none;
 }
 
-.footer__copyright {
-    background-color: #131a22;
+.footer__nav {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: 100%;
+    background-color: #232f3e;
+    color: #c3dada;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
-.footer__copyright{
+.footer__navRow {
+    padding: 0px 70px;
+}
+
+.footer__copyright {
+    width: 100%;
     align-items: center;
     margin: 0 auto;
-    color: whitesmoke;
+    background-color: #131a22;
+    color: #c3dada;
+    padding: 5px 0px;
+    border: none;
 }
