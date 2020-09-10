@@ -20,24 +20,34 @@
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
-.home__discover {
+.home__imageSlide {
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -300px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.home__discover, .home__book {
     display: flex;
     flex-direction: column;
     margin: auto 15px;
     background-color: white;
+    border-radius: 7px;
 }
 
-.home__discover h2 {
+.home__discoverTitle, .home__bookTitle {
     align-items: left;
     padding-top: 20px;
     margin-left: 30px;
 }
 
-.home__discover small {
+.home__discoverLink, .home__bookLink {
+    text-decoration: none;
     color: #2fa3e6;
+    font-size: 13px;
 }
 
-.home__discoverDiv {
+.home__discoverDiv, .home__bookDiv {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -45,3 +55,4 @@
     padding-top: 30px;
     padding-bottom: 30px;
 }
+

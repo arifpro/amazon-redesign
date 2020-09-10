@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 // firebase
 import { auth } from './firebase';
 import { useStateValue } from './state/StateProvider';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -37,30 +38,27 @@ function App() {
     // BEM naming convention
     <Router>
       <div className="app">
-        <Switch>
+        <Header />
+          <Switch>
 
-            <Route exact path='/'>
-                <Header />
-                <Home />
-                {/* footer */}
-            </Route>
+              <Route exact path='/'>
+                  <Home />
+              </Route>
 
-            <Route path='/login'>
-                <Header />
-                <Login />
-            </Route>
+              <Route path='/login'>
+                  <Login />
+              </Route>
 
-            <Route path='/checkout'>
-                <Header />
-                <Checkout />
-            </Route>
+              <Route path='/checkout'>
+                  <Checkout />
+              </Route>
 
-            <Route path='*'>
-                <Header />
-                <PageNotFound />
-            </Route>
-        
-        </Switch>
+              <Route path='*'>
+                  <PageNotFound />
+              </Route>
+
+          </Switch>
+        <Footer />
       </div>
     </Router>
   );

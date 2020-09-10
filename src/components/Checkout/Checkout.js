@@ -14,13 +14,13 @@ const Checkout = () => {
     const [{ cart, user }, dispatch] = useStateValue();
 
     return (
-        <section className="checkout">
+        <section className={cart && cart.length>0 ? 'checkout2' : 'checkout'}>
             <div className="checkout__left">
                 <img src={checkoutAd} alt="checkoutAd" className="checkout_ad"/>
 
                 <div>
-                    <h3>Hello, {user?.email}</h3>
-                    <h2 className="checkout__title">Your shopping Cart</h2>
+                    <h3>Hello, {user? user.email : 'Guest'}</h3>
+                    <h2 className="checkout__title">Your Shopping Cart {cart && cart.length !== 0 ? '' : 'Is Empty'}</h2>
 
                     {/* cart item */}
                     {
